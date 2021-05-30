@@ -22,12 +22,19 @@ For simplicity, it contains a very simple front end, and simple express structur
 To run the project you need to have installed NodeJs, MongoDB.
 
 ### Screenshots :
+
 Main Page :
+
 ![Example screenshot](./gitIMG/mainPage.png)
+
 List Page :
+
 ![Example screenshot](./gitIMG/listPage.png)
+
 Image Show Page :
+
 ![Example screenshot](./gitIMG/showPage.png)
+
 
 ### Run the app
 after stablishing MongoDB databsase
