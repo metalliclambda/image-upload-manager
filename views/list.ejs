@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        body {
+          background-color: #b3cde0;
+          padding: 1%;            
+        }
+        .img-preview {
+          height: 50px;
+        }
+        .margin {
+            margin: 1%;
+        }
+        .v-center {
+          vertical-align: middle;
+        }
+    </style>
+    <title>Image List</title>
+</head>
+<body>
+    <h1>File List :</h1>    
+    <a class="btn btn-primary" href="/" role="button">Home</a>
+    <div>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">File Name</th>
+                <th scope="col">Size</th>
+                <th scope="col">Upload Time</th>
+                <th scope="col">Last Modified Time</th>
+                <th scope="col">Image Resolution</th>
+                <th scope="col">Preview</th>                
+                <th scope="col">Delete</th>                
+              </tr>
+            </thead>
+            <tbody>
+
+
+              <% for(var i=0 ; i < files.length ; i++){  %>
+                <tr class="v-center">
+                  <th scope="row"> <%= i+1 %> </th>
+                  <td><a href="/images/<%= files[i].fileName %>" > <%= files[i].fileName %> </a> </td>
+                  <td> <%= files[i].fileSize %></td>
+                  <td> <%= files[i].uploadTime %></td>
+                  <td> <%= files[i].madeTime %></td>
+                  <td> <%= files[i].pictureWidth + "x" + files[i].pictureHeight  %>  </td>
+                  <td><img class="img-preview" src="./thumbnails/<%= files[i].fileName %>" alt=""></td>       
+                  <td>
+                    <form action="/delete/<%= files[i].fileName %>" method="POST">
+                      <button class="btn btn-danger" onclick="return deleteFunction()" type="submit">Delete</button>
+                    </form>
+                  </td>                  
+                </tr>
+              <% } %>
+
+
+            </tbody>
+          </table>
+          
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script>
+      function deleteFunction(event){
+          var result = confirm(`Sure to Delete This Image ?`);
+          if (result) {
+              return true;
+          }
+          return false;
+      }
+    </script>
+</body>
+</html>

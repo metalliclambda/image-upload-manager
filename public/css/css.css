@@ -1,0 +1,22 @@
+body {
+    padding: 1%;
+    background-color: #b3cde0;
+}
+
+.margin {
+    margin: 1%;
+}
+
+.centered {
+    text-align: center;
+}
+
+#imgPreview {
+    width: 10%;
+    height: 10;
+}
+
+#not-image-alert {
+    color: red;
+    font-weight: bold;
+}
