@@ -2,8 +2,8 @@
 A very simple image uploading and managing web app by nodejs, using express, ejs, mongoDB, mongoose, multer , sharp.
 
 ### Introduction :
-You can easily upload a real image(front end js file validates it thoroughly , even if it’s fake image file with image extension).
-The name will hash in the database and a thumbnail will create and you can watch them or delete them from disk and Database.
+You can easily upload a real image(the front end validates it thoroughly , even if it’s a fake image file with image extension).
+Files stores with hashed names in the database and disk and a thumbnail will create and you can watch them or delete them from disk and Database.
 For simplicity, it contains a very simple front end, and simple express structure in app.js(not routing structure).
 
 
